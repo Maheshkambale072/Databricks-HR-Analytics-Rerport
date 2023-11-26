@@ -26,12 +26,14 @@ group by 2
 
 -- COMMAND ----------
 
+-- DBTITLE 1,Attrition by Department
 select sum(EmployeeCount), Department from hr_data
 Where Attrition = 'Yes'
 group by Department
 
 -- COMMAND ----------
 
+-- DBTITLE 1,Attrition by Education 
 select sum(EmployeeCount),
 case when Education= 1 then 'Below College'
 when Education= 2 then 'College'
@@ -43,6 +45,7 @@ group by 2
 
 -- COMMAND ----------
 
+-- DBTITLE 1,Attrition by Environment Satisfaction
 select sum(EmployeeCount),
 case when EnvironmentSatisfaction= 1 then 'Low'
 when EnvironmentSatisfaction= 2 then 'Mediuam'
@@ -54,6 +57,7 @@ group by 2
 
 -- COMMAND ----------
 
+-- DBTITLE 1,Attrition by time spend in Company.
 select sum(EmployeeCount), YearsAtCompany
  from hr_data
 Where Attrition = 'Yes' and YearsAtCompany < 25
@@ -61,6 +65,7 @@ group by 2
 
 -- COMMAND ----------
 
+-- DBTITLE 1,Attrition by Job role.
 select sum(EmployeeCount), JobRole from hr_data
 Where Attrition = 'Yes'
 group by 2
